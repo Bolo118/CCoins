@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BitCoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-1m-mlb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-1m-mlb">
                                 <rect key="frame" x="100" y="94" width="214" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" name="Yellow"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-yn-AfY">
-                                <rect key="frame" x="20" y="182" width="374" height="60"/>
+                                <rect key="frame" x="20" y="252" width="374" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lJ8-zM-PgW">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -40,7 +40,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="234" id="HGu-Y0-6RY"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" name="Yellow"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -65,18 +65,27 @@
                                 </constraints>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKR-cZ-uz4">
-                                <rect key="frame" x="0.0" y="626" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
                                 <color key="tintColor" name="Yellow"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your coin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ty-vr-4VZ">
+                                <rect key="frame" x="20" y="182" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" name="Yellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Green"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qKR-cZ-uz4" secondAttribute="bottom" constant="20" id="5d9-9R-aZW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qKR-cZ-uz4" secondAttribute="bottom" id="5d9-9R-aZW"/>
+                            <constraint firstItem="1Ty-vr-4VZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DYx-oh-Sm3"/>
                             <constraint firstItem="2gb-1m-mlb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Gx1-Pv-egi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2gb-1m-mlb" secondAttribute="trailing" constant="100" id="LiG-gu-Wej"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K2K-yn-AfY" secondAttribute="trailing" constant="20" id="RRz-Y0-brg"/>
-                            <constraint firstItem="K2K-yn-AfY" firstAttribute="top" secondItem="2gb-1m-mlb" secondAttribute="bottom" constant="40" id="XHO-dg-Tw6"/>
+                            <constraint firstItem="K2K-yn-AfY" firstAttribute="top" secondItem="1Ty-vr-4VZ" secondAttribute="bottom" constant="40" id="XHO-dg-Tw6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ty-vr-4VZ" secondAttribute="trailing" constant="20" id="bSR-F5-uQL"/>
                             <constraint firstItem="2gb-1m-mlb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="cij-zs-ELd"/>
+                            <constraint firstItem="1Ty-vr-4VZ" firstAttribute="top" secondItem="2gb-1m-mlb" secondAttribute="bottom" constant="40" id="dN5-0w-Eaj"/>
                             <constraint firstItem="qKR-cZ-uz4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eHT-HK-RUP"/>
                             <constraint firstItem="qKR-cZ-uz4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iqc-xm-14G"/>
                             <constraint firstItem="K2K-yn-AfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tru-cM-Z0M"/>
@@ -85,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="coinLabel" destination="UjM-Yy-mFm" id="AHl-Ll-HIf"/>
+                        <outlet property="coinNameLabel" destination="1Ty-vr-4VZ" id="nvV-xM-pQO"/>
                         <outlet property="currencyLabel" destination="gwI-l1-H9d" id="FZR-Ng-eMr"/>
                         <outlet property="currencyPicker" destination="qKR-cZ-uz4" id="7st-Yo-mRK"/>
                     </connections>

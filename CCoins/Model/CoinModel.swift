@@ -13,6 +13,6 @@ struct CoinModel {
     let unit: String
     
     var currencyString: String {
-        return String(format: "%.2f", currency)
+        return String(format: "%.2f",locale: Locale.current , currency)
     }
 }

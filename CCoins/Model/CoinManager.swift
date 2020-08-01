@@ -19,11 +19,13 @@ struct CoinManager {
     
     let currencyArray = ["AUD", "BRL","CAD","EUR","GBP","HKD","IDR","INR","JPY","MXN","NZD","PLN","RUB","SGD","USD","ZAR"]
     
-    let baseURL = "https://rest.coinapi.io/v1/exchangerate/BTC"
+    let coinArray = ["BTC","ETH","NEO","XRP","LTC","DOGE"]
+    
+    let baseURL = "https://rest.coinapi.io/v1/exchangerate"
     let apiKey = "A1693F4A-8CDC-4BF9-B08C-F92897C3FBE5"
     
-    func getCoinPrice(for currency: String) {
-        let urlString = "\(baseURL)/\(currency)?apikey=\(apiKey)"
+    func getCoinPrice(coin: String, currency: String) {
+        let urlString = "\(baseURL)/\(coin)/\(currency)?apikey=\(apiKey)"
         performRequest(with: urlString)
     }
     
@@ -59,6 +61,23 @@ struct CoinManager {
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
+        }
+    }
+    
+    func showCoinName(name: String) -> String {
+        switch name {
+        case "ETH":
+            return "Ethereum"
+        case "NEO":
+            return "Neo"
+        case "XRP":
+            return "XRP"
+        case "LTC":
+            return "Litecoin"
+        case "DOGE":
+            return "Dogecoin"
+        default:
+            return "Bitcoin"
         }
     }
 }
